@@ -60,16 +60,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1667132134,
-        "narHash": "sha256-L19CZgXapkT9N2gLH3bKj6CrOm/HiAht6SZCGfQhW4w=",
-        "owner": "K900",
+        "lastModified": 1710519878,
+        "narHash": "sha256-0dbc10OBFUVYyXC+C+N6vRUd8xyBSRxkcZ4Egipbx0M=",
+        "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "40f190cad227e996d90c6170bd830f3f215ce9b8",
+        "rev": "aef95bdb6800a3a2af7aa7083d6df03067da6592",
         "type": "github"
       },
       "original": {
-        "owner": "K900",
-        "ref": "native-systemd",
+        "owner": "nix-community",
         "repo": "NixOS-WSL",
         "type": "github"
       }

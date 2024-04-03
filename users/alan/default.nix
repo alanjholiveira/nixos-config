@@ -8,6 +8,7 @@
       description = "Alan Oliveira";
       home = "/home/alan";
       createHome = true;
+      shell = pkgs.zsh;
       # passwordFile = "/persist/encrypted-passwords/alan";
       # extraGroups = [ "wheel" "disk" "networkmanager" "libvirtd" "qemu-libvirtd" "kvm" ];
       # extraGroups = [ "wheel" "networkmanager" "libvirtd" "qemu-libvirtd" "kvm" "docker" ];

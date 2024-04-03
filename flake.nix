@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-wsl = {
-      # url = "github:nix-community/NixOS-WSL";
-      url = "github:K900/NixOS-WSL/native-systemd";
+      url = "github:nix-community/NixOS-WSL";
+      # url = "github:K900/NixOS-WSL/native-systemd";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -98,6 +98,17 @@
             ];
           };
 
+           wsl-alienware = nixpkgs.lib.nixosSystem {
+            inherit (x86_64Base) system;
+            modules = x86_64Base.modules ++ [
+              nixos-wsl.nixosModules.wsl
+              platforms.wsl
+              packages.interface.hyprland
+              packages.app.docker
+              # users.alan
+            ];
+          };
+
           alienware = nixpkgs.lib.nixosSystem {
             inherit (x86_64Base) system;
             modules = x86_64Base.modules ++ [
@@ -123,6 +134,8 @@
         packages.overlay = { nixpkgs.overlays = [ self.overlays.default ]; };
         packages.base = ./packages/base;
         packages.interface.gnome = ./packages/interface/gnome;
+        packages.interface.hyprland = ./packages/interface/hyprland;
+
         packages.app.docker = ./packages/app/docker.nix;
         packages.app.flatpak = ./packages/app/flatpak.nix;
         packages.app.jetbrains = ./packages/app/jetbrains.nix;
