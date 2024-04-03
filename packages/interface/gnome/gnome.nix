@@ -4,10 +4,6 @@
 { config, pkgs, lib, ... }:
 
 {
-    imports = [
-        ./deconf.nix
-    ];
-    
   config = {
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;

@@ -106,6 +106,7 @@
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.vitals
     fix-vscode
+    asdf-vm
   ] ++ (if stdenv.isx86_64 then [
     # kicad
     # chromium
@@ -122,7 +123,7 @@
     mutableExtensionsDir = false;
 
     userSettings = {
-      "workbench.colorTheme" = "GitHub Dark Default";
+      "workbench.colorTheme" = "GitHub Dark";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.fontFamily" = "JetBrains Mono";
       "editor.fontSize" = 14;
@@ -178,6 +179,8 @@
     initExtra = ''
       # End of lines configured by zsh-powerlevel10k-install
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      # End of line configured by asdf-vm
+      source ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
     '';
   };
 

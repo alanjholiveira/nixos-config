@@ -5,6 +5,5 @@
     ./gpg.nix
     ./openssh.nix
     ./sudo.nix
-    # ./sshd.nix
   ];
 }

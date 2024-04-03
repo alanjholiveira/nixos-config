@@ -25,18 +25,18 @@
     
 
     fileSystems."/" =
-      { device = "/dev/disk/by-uuid/68197200-83d3-4ef0-8f7c-f6d3dd9a9fc2";
-        fsType = "ext4";
-      };
+    { device = "/dev/disk/by-uuid/2e7a33b4-fed3-4a18-ada6-96468d61f8f9";
+      fsType = "ext4";
+    };
 
-    fileSystems."/boot" =
-      { device = "/dev/disk/by-uuid/0A22-8DA6";
-        fsType = "vfat";
-      };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/7FB2-BD49";
+      fsType = "vfat";
+    };
 
-    swapDevices =
-      [ { device = "/dev/disk/by-uuid/0cc89c64-8b54-42b5-b653-4da701584769"; }
-      ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/c513e292-da45-42c8-a22c-cfda10692405"; }
+    ];
 
     networking.hostName = "Aliewnare-M15";
     # networking.domain = "hoverbear.home";

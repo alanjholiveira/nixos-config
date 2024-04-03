@@ -4,7 +4,7 @@
     ./kernel.nix
     ./networking.nix
     ./opengl.nix
-    ./power.nix
+    # ./power.nix
     ./printing.nix
     ./sound.nix
     ./systemd.nix

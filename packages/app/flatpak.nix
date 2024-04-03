@@ -1,12 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  home.packages = [ pkgs.flatpak ];
-  home.sessionVariables = {
-    XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"; # lets flatpak work
+  config = {
+      services.flatpak.enable = true;
+      #services.flatpak.packages = [ { appId = "com.kde.kdenlive"; origin = "flathub";  } ];
+      #services.flatpak.update.onActivation = true;
+      environment.systemPackages = [ pkgs.flatpak-builder ];
   };
-
-  #services.flatpak.enable = true;
-  #services.flatpak.packages = [ { appId = "com.kde.kdenlive"; origin = "flathub";  } ];
-  #services.flatpak.update.onActivation = true;
 }

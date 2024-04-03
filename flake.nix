@@ -104,7 +104,6 @@
               platforms.intel
               system.hardware
               system.security
-              system.source-build
               hardwares.alienware
               packages.interface.gnome
               users.alan
@@ -138,22 +137,22 @@
         users.alan = ./users/alan;
       };
 
-      checks = forAllSystems (system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ self.overlays.default ];
-          };
-        in
-        {
-          format = pkgs.runCommand "check-format"
-            {
-              buildInputs = with pkgs; [ rustfmt cargo ];
-            } ''
-            ${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt --check ${./.}
-            touch $out # it worked!
-          '';
-        });
+     # checks = forAllSystems (system:
+     #   let
+     #     pkgs = import nixpkgs {
+     #       inherit system;
+     #       overlays = [ self.overlays.default ];
+     #     };
+     #   in
+     #   {
+     #     format = pkgs.runCommand "check-format"
+     #       {
+      #        buildInputs = with pkgs; [ rustfmt cargo ];
+      #      } ''
+      #      ${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt --check ${./.}
+      #      touch $out # it worked!
+       #   '';
+       # });
 
     };
 }

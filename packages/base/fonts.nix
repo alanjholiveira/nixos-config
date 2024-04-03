@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
     config = {
       fonts = {
         enableDefaultPackages = true;

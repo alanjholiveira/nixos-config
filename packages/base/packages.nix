@@ -17,9 +17,9 @@
     ];
 
     environment.shellAliases = { };
-    environment.variables = {
-      EDITOR = "${pkgs.vscode}/bin/code";
-    };
+   environment.variables = {
+     EDITOR = "${pkgs.vscode}/bin/code";
+   };
     environment.pathsToLink = [
       "/share/nix-direnv"
     ];

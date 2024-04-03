@@ -10,5 +10,5 @@
         options = "terminate:ctrl_alt_bksp"; #"grp:caps_toggle,grp_led:scroll"
       };
     };
-  }
+  };
 }
