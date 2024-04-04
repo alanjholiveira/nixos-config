@@ -2,11 +2,16 @@
 
 {
   config = {
+    services.xserver.displayManager.lightdm.enable = true;
+    services.xserver.enable = true;
+    # services.dunst.enable = true;
+    programs.waybar.enable = true;
+
     programs.hyprland = {
       enable = true;
       xwayland = {
         enable = true; 
-        hidpi = true;
+        # hidpi = true;
       };
     };
     # Optional, hint electron apps to use wayland:
@@ -33,6 +38,8 @@
       wayland-utils
       wl-clipboard
       wlroots
+      xwaylandvideobridge
+      swaylock
     ];
     nixpkgs.overlays = [
       (self: super: {
@@ -41,7 +48,7 @@
         });
       })
     ];
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
       nerdfonts
       meslo-lgs-nf
       jetbrains-mono

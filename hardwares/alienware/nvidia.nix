@@ -13,6 +13,7 @@
             #driSupport32Bit = true;
         };
         nvidia = {
+            acceptLicense = true;
             # Modesetting is required.
             modesetting.enable = true;
 

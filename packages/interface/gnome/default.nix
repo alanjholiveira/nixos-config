@@ -1,6 +1,6 @@
 {
   imports = [
     ./gnome.nix
-    # ./deconf.nix
+    # ./dconf.nix
   ];
 }

@@ -1,0 +1,7 @@
+{ config, ... }:
+{
+  config = {
+    environment.shellAliases = { };
+  };
+  
+}

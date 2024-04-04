@@ -4,6 +4,9 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [
+    # ./dconf.nix
+  ];
   config = {
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
@@ -37,6 +40,7 @@
 
     services.gnome.gnome-keyring.enable = true;
     programs.dconf.enable = true;
+    services.dbus.packages = with pkgs; [ dconf ];
   };
 }
 

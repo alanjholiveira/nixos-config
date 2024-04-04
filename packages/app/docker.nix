@@ -9,5 +9,7 @@
         setSocketVariable = true;
       };
     };
+
+    # users.users.${username}.extraGroups = [ "docker" ];
   };
 }

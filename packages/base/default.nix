@@ -1,10 +1,9 @@
 {
   imports = [
     ./nix.nix
-    ./services.nix
     ./packages.nix
     ./fonts.nix
-    ./locale.nix
+    ./internationalisation.nix
     ./user.nix
   ];
 }

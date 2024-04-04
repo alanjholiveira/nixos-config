@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # flake-utils.url = "github:numtide/flake-utils";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       # url = "github:K900/NixOS-WSL/native-systemd";
@@ -12,6 +13,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # nbr = {
+    #   url = "github:nixosbrasil/nixpkgs-brasil";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-utils.follows = "flake-utils";
+    # };
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager }:
@@ -103,9 +109,11 @@
             modules = x86_64Base.modules ++ [
               nixos-wsl.nixosModules.wsl
               platforms.wsl
-              packages.interface.hyprland
+              packages.interface.gnome
               packages.app.docker
-              # users.alan
+              system.shell.zsh
+              users.alan
+              packages.app.vscode
             ];
           };
 
@@ -140,9 +148,12 @@
         packages.app.flatpak = ./packages/app/flatpak.nix;
         packages.app.jetbrains = ./packages/app/jetbrains.nix;
         packages.app.virtualisation = ./packages/app/virtualisation.nix;
+        packages.app.vscode = ./packages/app/vscode.nix;
 
         system.hardware = ./system/hardware;
         system.security = ./system/security;
+        system.shell.zsh = ./system/shell/zsh.nix;
+        system.shell.bash = ./system/shell/bash.nix;
         system.source-build = ./system/source-build.nix;
 
         hardwares.alienware = ./hardwares/alienware;
@@ -150,22 +161,22 @@
         users.alan = ./users/alan;
       };
 
-     # checks = forAllSystems (system:
-     #   let
-     #     pkgs = import nixpkgs {
-     #       inherit system;
-     #       overlays = [ self.overlays.default ];
-     #     };
-     #   in
-     #   {
-     #     format = pkgs.runCommand "check-format"
-     #       {
-      #        buildInputs = with pkgs; [ rustfmt cargo ];
-      #      } ''
-      #      ${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt --check ${./.}
-      #      touch $out # it worked!
-       #   '';
-       # });
+     checks = forAllSystems (system:
+       let
+         pkgs = import nixpkgs {
+           inherit system;
+           overlays = [ self.overlays.default ];
+         };
+       in
+       {
+         format = pkgs.runCommand "check-format"
+           {
+             buildInputs = with pkgs; [ rustfmt cargo ];
+           } ''
+           ${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt --check ${./.}
+           touch $out # it worked!
+         '';
+      });
 
     };
 }
