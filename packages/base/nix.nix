@@ -22,6 +22,7 @@
           experimental-features = nix-command flakes
           builders-use-substitutes = true
         '';
+        settings.auto-optimise-store = true;
       };
       programs.nix-ld.enable = true;
       programs.nix-ld.libraries = with pkgs; [
@@ -29,6 +30,8 @@
         # here, NOT in environment.systemPackages
       ];
       system.stateVersion = "23.11";
+      system.autoUpgrade.enable  = true;
+
     };
   
 }

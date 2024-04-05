@@ -15,6 +15,7 @@ in
     configHome = "${config.home.homeDirectory}/.config";
     dataHome = "${config.home.homeDirectory}/.local/share";
     stateHome = "${config.home.homeDirectory}/.local/state";
+    binHome = "${config.home.homeDirectory}/.local/bin";
 
     mime.enable = true; # grep package mime types
     mimeApps.enable = true; # create $XDG_CONFIG_HOME/mimeapps.list
@@ -24,15 +25,15 @@ in
 
     userDirs = {
       enable = true;
-      createDirectories = false;
-      desktop = null;
-      documents = null;
-      download = "${config.home.homeDirectory}/downloads";
-      music = "${config.home.homeDirectory}/music";
-      pictures = null;
-      publicShare = null;
-      templates = null;
-      videos = null;
+      createDirectories = true;
+      # desktop = null;
+      # documents = null;
+      # download = "${config.home.homeDirectory}/downloads";
+      # music = "${config.home.homeDirectory}/music";
+      # pictures = null;
+      # publicShare = null;
+      # templates = null;
+      # videos = null;
     };
   };
 

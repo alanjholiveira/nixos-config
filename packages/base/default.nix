@@ -5,5 +5,6 @@
     ./fonts.nix
     ./internationalisation.nix
     ./user.nix
+    # ./xdg.nix
   ];
 }
