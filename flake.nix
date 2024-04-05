@@ -128,6 +128,9 @@
               users.alan
               packages.app.docker
               packages.app.flatpak
+              system.shell.zsh
+              packages.app.vscode
+              packages.app.jetbrains
             ];
           };
         };
