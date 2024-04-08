@@ -14,6 +14,8 @@
       home-manager
       firefox
       asdf-vm
+      google-chrome
+      microsoft-edge
     ];
    
     environment.pathsToLink = [

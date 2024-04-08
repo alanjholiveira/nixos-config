@@ -35,6 +35,8 @@
       gnome.gnome-tweaks
       gnome.gnome-characters
       gnome.dconf-editor
+      gnomeExtensions.tray-icons-reloaded
+      gnomeExtensions.vitals
     ];
 
     services.gnome.gnome-keyring.enable = true;
