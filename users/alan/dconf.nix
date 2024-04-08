@@ -4,7 +4,8 @@ let
   inherit (lib) mkIf;
 in
 {
-  config = mkIf config.programs.dconf.enable {
+  # config = mkIf nix.package {
+  config = {
     dconf.settings = let inherit (lib.hm.gvariant) mkTuple mkUint32 mkVariant; in {
       "org/gnome/shell" = {
         disable-user-extensions = false;
