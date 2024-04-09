@@ -38,8 +38,7 @@
       wayland-utils
       wl-clipboard
       wlroots
-      xwaylandvideobridge
-      swaylock
+      xwaylandvideobridge      
     ];
     nixpkgs.overlays = [
       (self: super: {

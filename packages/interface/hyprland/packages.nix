@@ -16,6 +16,9 @@
       # app launchers
       rofi-wayland
       wofi
+      swaylock
+      swayidle
+      rofi
     ];
     
 
