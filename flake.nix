@@ -132,6 +132,23 @@
               packages.app.jetbrains
             ];
           };
+          alienware-hyprland = nixpkgs.lib.nixosSystem {
+            inherit (x86_64Base) system;
+            modules = x86_64Base.modules ++ [
+              platforms.intel
+              system.hardware
+              system.security
+              hardwares.alienware
+              packages.interface.hyprland
+              users.alan
+              packages.app.docker
+              packages.app.flatpak
+              system.shell.zsh
+              packages.app.vscode
+              packages.app.jetbrains
+            ];
+          };
+
         };
 
       nixosModules = {
